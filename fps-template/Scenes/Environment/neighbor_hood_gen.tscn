@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ca6xt6y1l11db"]
+
+[ext_resource type="Script" uid="uid://di8vxb4aq7xlc" path="res://Scripts/Environment/Neighborhood/neighbor_hood_gen.gd" id="1_0exi0"]
+[ext_resource type="Resource" uid="uid://by2qok5grp0pn" path="res://Resources/Scenes/NeighborHoods/neightborhood_1.tres" id="2_vjy6u"]
+[ext_resource type="Script" uid="uid://72o026ahi83t" path="res://Scripts/Player/test_camera.gd" id="3_yih6l"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0exi0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vjy6u"]
+sky_material = SubResource("ProceduralSkyMaterial_0exi0")
+
+[sub_resource type="Environment" id="Environment_yih6l"]
+background_mode = 2
+sky = SubResource("Sky_vjy6u")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_khhxn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s1fef"]
+
+[node name="NeighborHoodGen" type="Node3D" unique_id=1892291863]
+script = ExtResource("1_0exi0")
+config = ExtResource("2_vjy6u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=57380469]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1200738557]
+environment = SubResource("Environment_yih6l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=478070065]
+mesh = SubResource("BoxMesh_khhxn")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=256741398 node_paths=PackedStringArray("neck", "camera")]
+script = ExtResource("3_yih6l")
+neck = NodePath("Neck")
+camera = NodePath("Neck/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1458987343]
+shape = SubResource("CapsuleShape3D_s1fef")
+
+[node name="Neck" type="Node3D" parent="CharacterBody3D" unique_id=683234290]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck" unique_id=423051737]
+fov = 100.0

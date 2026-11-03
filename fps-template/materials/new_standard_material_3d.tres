@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bh8uskik2qwws"]
+
+[ext_resource type="Texture2D" uid="uid://slsbgdypanlj" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_black_1024x1024.png" id="1_05cnx"]
+
+[resource]
+albedo_texture = ExtResource("1_05cnx")
+uv1_scale = Vector3(50, 50, 50)

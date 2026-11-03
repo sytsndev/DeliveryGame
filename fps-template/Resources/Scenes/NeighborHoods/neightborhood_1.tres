@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="NeighborhoodGenRes" format=3 uid="uid://by2qok5grp0pn"]
+
+[ext_resource type="Script" uid="uid://bejvna5fq3ik0" path="res://Resources/Scripts/NeighborhoodGenRes.gd" id="1_q3376"]
+[ext_resource type="Script" uid="uid://d215oyl6ds3g4" path="res://Resources/Scripts/street_res.gd" id="2_uxu7q"]
+[ext_resource type="Resource" uid="uid://bleo46tbp05fu" path="res://Resources/Scenes/Streets/corner_res.tres" id="3_auvuw"]
+[ext_resource type="Resource" uid="uid://bdkruknnf61yj" path="res://Resources/Scenes/Streets/straight_res.tres" id="4_yn61y"]
+[ext_resource type="Resource" uid="uid://2xajllrvinru" path="res://Resources/Scenes/Streets/end_res.tres" id="5_vgh1e"]
+[ext_resource type="Resource" uid="uid://box8mc33qym3i" path="res://Resources/Scenes/Streets/grass_res.tres" id="6_4bkfj"]
+[ext_resource type="Resource" uid="uid://ywwgcjt51h48" path="res://Resources/Scenes/Streets/cross_res.tres" id="7_ubm3o"]
+[ext_resource type="Resource" uid="uid://ma2vdllfs17q" path="res://Resources/Scenes/Streets/t_res.tres" id="8_laexl"]
+
+[resource]
+script = ExtResource("1_q3376")
+streets = Array[ExtResource("2_uxu7q")]([ExtResource("4_yn61y"), ExtResource("3_auvuw"), ExtResource("5_vgh1e"), ExtResource("6_4bkfj"), ExtResource("7_ubm3o"), ExtResource("8_laexl")])
+metadata/_custom_type_script = "uid://bejvna5fq3ik0"

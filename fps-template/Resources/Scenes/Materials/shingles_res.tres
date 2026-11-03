@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MaterialRes" format=3 uid="uid://cseeyiuaxvxf6"]
+
+[ext_resource type="Texture2D" uid="uid://crpwa5y00pfst" path="res://Assets/Houses/Textures/Roof/Shingles/Shingles_Color.jpg" id="1_jdm58"]
+[ext_resource type="Texture2D" uid="uid://dvsn1i2yqu8du" path="res://Assets/Houses/Textures/Roof/Shingles/Shingles_Normal.jpg" id="2_aypcx"]
+[ext_resource type="Texture2D" uid="uid://bdkftq23dsml8" path="res://Assets/Houses/Textures/Roof/Shingles/Shingles_Roughness.jpg" id="3_8ku5e"]
+[ext_resource type="Script" uid="uid://cplwbgy8gfei8" path="res://Resources/Scripts/material_res.gd" id="4_a67jj"]
+
+[resource]
+script = ExtResource("4_a67jj")
+diffuse = ExtResource("1_jdm58")
+normal = ExtResource("2_aypcx")
+roughness = ExtResource("3_8ku5e")
+metadata/_custom_type_script = "uid://cplwbgy8gfei8"

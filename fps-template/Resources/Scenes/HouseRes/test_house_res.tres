@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="HouseRes" format=3 uid="uid://dvdbo8jgi1vc5"]
+
+[ext_resource type="Material" uid="uid://yerq3oncg0ic" path="res://Assets/Houses/Materials/house_door_material.tres" id="1_bc5s3"]
+[ext_resource type="PackedScene" uid="uid://b7k3or4bp058u" path="res://Assets/Houses/Models/Houses/TestHouse.glb" id="1_pjar0"]
+[ext_resource type="Script" uid="uid://1adapru7q1ci" path="res://Resources/Scripts/house_res.gd" id="1_wox6t"]
+[ext_resource type="Script" uid="uid://cplwbgy8gfei8" path="res://Resources/Scripts/material_res.gd" id="2_pjar0"]
+[ext_resource type="Material" uid="uid://bp3nyv7ttmi07" path="res://Assets/Houses/Materials/house_roof_material.tres" id="4_dljnc"]
+[ext_resource type="Resource" uid="uid://cseeyiuaxvxf6" path="res://Resources/Scenes/Materials/shingles_res.tres" id="5_2vrr7"]
+[ext_resource type="Material" uid="uid://cj4hyrtmx0vxy" path="res://Assets/Houses/Materials/house_wall_material.tres" id="6_2vrr7"]
+[ext_resource type="Resource" uid="uid://cho5aepmjuq7k" path="res://Resources/Scenes/Materials/wood_panel_res.tres" id="7_dljnc"]
+
+[resource]
+script = ExtResource("1_wox6t")
+house_scene = ExtResource("1_pjar0")
+door_material = ExtResource("1_bc5s3")
+wall_material = ExtResource("6_2vrr7")
+roof_material = ExtResource("4_dljnc")
+wall_texture = Array[ExtResource("2_pjar0")]([ExtResource("7_dljnc")])
+roof_texture = Array[ExtResource("2_pjar0")]([ExtResource("5_2vrr7")])
+wall_colors = Array[Color]([Color(1, 0.23137255, 0.1882353, 1), Color(1, 0.58431375, 0, 1), Color(1, 0.8, 0, 1), Color(0.20392157, 0.78039217, 0.34901962, 1), Color(0, 0.47843137, 1, 1), Color(0.6862745, 0.32156864, 0.87058824, 1), Color(0.9490196, 0.9411765, 0.9098039, 1)])
+roof_colors = Array[Color]([Color(0, 0, 0, 1), Color(1, 0.19607843, 0, 1)])
+door_colors = Array[Color]([Color(0.78039217, 0.35686275, 0.07058824, 1), Color(0.7176471, 0.10980392, 0.10980392, 1), Color(0.8784314, 0.65882355, 0.18039216, 1), Color(0.18039216, 0.49019608, 0.19607843, 1), Color(0.08235294, 0.39607844, 0.7529412, 1), Color(0.9490196, 0.9411765, 0.9098039, 1)])
+metadata/_custom_type_script = "uid://1adapru7q1ci"

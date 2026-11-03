@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://co30u2fpaf732"]
+
+[ext_resource type="Script" uid="uid://fn5255l3gcb" path="res://Scripts/Environment/Interactable/pistol_interactable.gd" id="1_v3nkm"]
+[ext_resource type="Resource" uid="uid://b141tgvajkweo" path="res://Resources/Scenes/Interactables/pistol_interact_res.tres" id="2_8uw72"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_blfcr"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2k3b2"]
+
+[node name="MeleeInteractable" type="Node3D" unique_id=605355615]
+script = ExtResource("1_v3nkm")
+res_path = "res://Resources/Scenes/Weapons/meele_weapon_res.tres"
+interactable_res = ExtResource("2_8uw72")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=323501614]
+collision_layer = 16
+collision_mask = 16
+
+[node name="InteractCollision" type="CollisionShape3D" parent="Area3D" unique_id=1989290819]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_blfcr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1333014238]
+mesh = SubResource("SphereMesh_2k3b2")
+
+[node name="WeaponName" type="Label3D" parent="." unique_id=256297162]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90228736, 0)
+text = "test"
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area3D" to="." method="_on_area_3d_body_shape_exited"]

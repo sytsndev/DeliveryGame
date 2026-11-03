@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b43tg2rvw0aip"]
+
+[ext_resource type="Script" uid="uid://dfwl34c8qlfsj" path="res://Scripts/House/house_generator.gd" id="1_hfkix"]
+[ext_resource type="Resource" uid="uid://dvdbo8jgi1vc5" path="res://Resources/Scenes/HouseRes/test_house_res.tres" id="2_x6o7t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s1fef"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_khhxn"]
+size = Vector3(1, 1, 3)
+
+[node name="House" type="Node3D" unique_id=81558773]
+script = ExtResource("1_hfkix")
+house_res = ExtResource("2_x6o7t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1194130096]
+visible = false
+mesh = SubResource("BoxMesh_s1fef")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=411489202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+visible = false
+mesh = SubResource("BoxMesh_khhxn")

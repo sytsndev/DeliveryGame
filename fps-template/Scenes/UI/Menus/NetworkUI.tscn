@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dc88bsb5edwiy"]
+
+[ext_resource type="Script" uid="uid://c4w37o1ejfkb0" path="res://Scripts/UI/menus/network_ui.gd" id="1_w5ivk"]
+
+[node name="NetworkUi" type="Control" unique_id=828660242 node_paths=PackedStringArray("username_input", "ip_address_input")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = 110.0
+offset_right = -38.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w5ivk")
+username_input = NodePath("UserNameInput")
+ip_address_input = NodePath("VBoxContainer/IpAddressInput")
+
+[node name="UserNameInput" type="LineEdit" parent="." unique_id=884846999]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 254.0
+offset_right = 740.0
+offset_bottom = 285.0
+offset_transform_enabled = true
+placeholder_text = "Enter your Username"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=421102294]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Server" type="Button" parent="VBoxContainer" unique_id=1191063160]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Host"
+
+[node name="IpAddressInput" type="LineEdit" parent="VBoxContainer" unique_id=887215468]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+placeholder_text = "IP Adress"
+
+[node name="Client" type="Button" parent="VBoxContainer/IpAddressInput" unique_id=847623676]
+layout_mode = 0
+offset_left = 206.0
+offset_top = -2.0
+offset_right = 275.0
+offset_bottom = 29.0
+size_flags_vertical = 4
+text = "Join"
+
+[connection signal="pressed" from="VBoxContainer/Server" to="." method="_on_server_pressed"]
+[connection signal="pressed" from="VBoxContainer/IpAddressInput/Client" to="." method="_on_client_pressed"]

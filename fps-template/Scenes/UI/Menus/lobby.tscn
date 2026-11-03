@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://mtgd846qyn6j"]
+
+[ext_resource type="Script" uid="uid://yhu0113ivjid" path="res://Scripts/UI/menus/lobby_ui.gd" id="1_g2cgv"]
+
+[node name="Lobby" type="Control" unique_id=943319692 node_paths=PackedStringArray("player_list", "start_button", "leave_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g2cgv")
+player_list = NodePath("VBoxContainer/PlayerList")
+start_button = NodePath("VBoxContainer/Start_Leave Buttons/Start")
+leave_button = NodePath("VBoxContainer/Start_Leave Buttons/Leave")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=386481950]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LobbyHeader" type="Label" parent="VBoxContainer" unique_id=1712602935]
+layout_mode = 2
+text = "LOBBY"
+horizontal_alignment = 1
+
+[node name="PlayerList" type="VBoxContainer" parent="VBoxContainer" unique_id=1808897234]
+layout_mode = 2
+
+[node name="Start_Leave Buttons" type="HBoxContainer" parent="VBoxContainer" unique_id=1182536082]
+layout_mode = 2
+alignment = 1
+
+[node name="Leave" type="Button" parent="VBoxContainer/Start_Leave Buttons" unique_id=581925107]
+layout_mode = 2
+text = "Leave"
+
+[node name="Start" type="Button" parent="VBoxContainer/Start_Leave Buttons" unique_id=1412747786]
+layout_mode = 2
+text = "Start"
+
+[connection signal="pressed" from="VBoxContainer/Start_Leave Buttons/Start" to="." method="_on_start_button_pressed"]

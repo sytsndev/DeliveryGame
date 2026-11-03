@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bb762xwdu003v"]
+
+[ext_resource type="Script" uid="uid://du14w7h2ekdc3" path="res://Scripts/Environment/world.gd" id="1_5iqf7"]
+[ext_resource type="PackedScene" uid="uid://b43tg2rvw0aip" path="res://Scenes/House/house.tscn" id="2_e35u1"]
+[ext_resource type="PackedScene" uid="uid://n1bmpmajeq05" path="res://Scenes/Player/player.tscn" id="2_mh7mo"]
+[ext_resource type="Script" uid="uid://b6lhrlb5r0xck" path="res://Scripts/Network/Spawners/high_level_player_spawner.gd" id="3_mh7mo"]
+[ext_resource type="PackedScene" uid="uid://cx743a7r2n71x" path="res://Scenes/UI/player_ui.tscn" id="7_w2cw7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_tlwt5"]
+sky_material = SubResource("ProceduralSkyMaterial_fj7yv")
+
+[sub_resource type="Environment" id="Environment_aqk2v"]
+background_mode = 2
+sky = SubResource("Sky_tlwt5")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=1035094638]
+script = ExtResource("1_5iqf7")
+neighbor_hood = ExtResource("2_e35u1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=769725515]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2042201511]
+environment = SubResource("Environment_aqk2v")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=557405613]
+_spawnable_scenes = PackedStringArray("uid://n1bmpmajeq05")
+spawn_path = NodePath("../PlayerContainer")
+script = ExtResource("3_mh7mo")
+network_player = ExtResource("2_mh7mo")
+
+[node name="PlayerContainer" type="Node3D" parent="." unique_id=1068310013]
+
+[node name="PlayerUI" parent="." unique_id=2081950460 instance=ExtResource("7_w2cw7")]
+unique_name_in_owner = true

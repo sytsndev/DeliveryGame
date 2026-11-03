@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bp3nyv7ttmi07"]
+
+[ext_resource type="Shader" uid="uid://rh4ylyu70jed" path="res://Shaders/roof_shader.gdshader" id="1_1475o"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1475o")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/texture_tiling = Vector2(1, 1)
+shader_parameter/normal_strength = 0.7
+shader_parameter/roughness_strength = 1.0

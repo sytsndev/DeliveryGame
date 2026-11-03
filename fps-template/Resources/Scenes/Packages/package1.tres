@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PackageRes" format=3 uid="uid://damf5iy1fx36v"]
+
+[ext_resource type="Script" uid="uid://dvsyrchto81hr" path="res://Resources/Scripts/package_res.gd" id="1_d8snx"]
+
+[resource]
+script = ExtResource("1_d8snx")
+model_path = "res://Assets/Packages/package_scene.tscn"
+interact_path = "res://Scenes/Environment/Interactable/package_interactable.tscn"
+package_pos = Vector3(0.353, -0.302, -1.004)
+package_rot = Vector3(42.1, 162, 11.8)
+metadata/_custom_type_script = "uid://dvsyrchto81hr"

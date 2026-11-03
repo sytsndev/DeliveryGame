@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cx743a7r2n71x"]
+
+[ext_resource type="Script" uid="uid://chg4d2d7ml460" path="res://Scripts/UI/player_ui.gd" id="1_xnwvs"]
+[ext_resource type="Texture2D" uid="uid://ds1odr70irgdw" path="res://Assets/ui/ring_white.png" id="2_7jiju"]
+
+[node name="PlayerUI" type="Control" unique_id=2081950460]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xnwvs")
+
+[node name="Speed" type="RichTextLabel" parent="." unique_id=644647605]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 4.0
+offset_right = 825.0
+offset_bottom = 51.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Speed: "
+
+[node name="Health" type="RichTextLabel" parent="." unique_id=401251933]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 55.0
+offset_right = 290.0
+offset_bottom = 112.0
+theme_override_font_sizes/normal_font_size = 30
+text = "999"
+
+[node name="Damage" type="Button" parent="." unique_id=1874712172]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 14.0
+offset_right = -20.0
+offset_bottom = 45.0
+grow_horizontal = 0
+text = "Damage +"
+
+[node name="Interact" type="RichTextLabel" parent="." unique_id=886210753]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.75
+offset_top = -15.0
+offset_right = 80.75
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+text = "Press \"F\" to Interact"
+
+[node name="WeaponName" type="RichTextLabel" parent="." unique_id=1429776442]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.0
+offset_right = 226.0
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "WeaponName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThrowCharge" type="TextureProgressBar" parent="." unique_id=1433030648]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+max_value = 1.0
+step = 0.01
+fill_mode = 4
+texture_progress = ExtResource("2_7jiju")
+
+[connection signal="pressed" from="Damage" to="." method="_on_damage_pressed"]

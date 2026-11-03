@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bb762xwdu003v"]
+
+[ext_resource type="Script" uid="uid://du14w7h2ekdc3" path="res://Scripts/Environment/world.gd" id="1_5iqf7"]
+[ext_resource type="PackedScene" uid="uid://n1bmpmajeq05" path="res://Scenes/Player/player.tscn" id="2_mh7mo"]
+[ext_resource type="Script" uid="uid://b6lhrlb5r0xck" path="res://Scripts/Network/high_level_player_spawner.gd" id="3_mh7mo"]
+[ext_resource type="PackedScene" uid="uid://dc88bsb5edwiy" path="res://Scenes/UI/NetworkUI.tscn" id="4_fvyv6"]
+[ext_resource type="PackedScene" uid="uid://cwrcxu7q6mcfd" path="res://Scenes/Environment/neighbor_hood.tscn" id="6_hipvn"]
+[ext_resource type="PackedScene" uid="uid://co30u2fpaf732" path="res://Scenes/Environment/Interactable/melee_interactable.tscn" id="7_5xqn0"]
+[ext_resource type="PackedScene" uid="uid://dy82kep8jylr2" path="res://Scenes/Environment/Interactable/pistol_interactable.tscn" id="7_f5sk1"]
+[ext_resource type="PackedScene" uid="uid://cx743a7r2n71x" path="res://Scenes/UI/player_ui.tscn" id="7_w2cw7"]
+[ext_resource type="PackedScene" uid="uid://bqq0an8pauh58" path="res://Scenes/Environment/Interactable/full_auto_interactable.tscn" id="9_5xqn0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_tlwt5"]
+sky_material = SubResource("ProceduralSkyMaterial_fj7yv")
+
+[sub_resource type="Environment" id="Environment_aqk2v"]
+background_mode = 2
+sky = SubResource("Sky_tlwt5")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=1035094638]
+script = ExtResource("1_5iqf7")
+neighbor_hood = ExtResource("6_hipvn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=769725515]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2042201511]
+environment = SubResource("Environment_aqk2v")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=557405613]
+_spawnable_scenes = PackedStringArray("uid://n1bmpmajeq05")
+spawn_path = NodePath("../PlayerContainer")
+script = ExtResource("3_mh7mo")
+network_player = ExtResource("2_mh7mo")
+
+[node name="NetworkUi" parent="." unique_id=828660242 instance=ExtResource("4_fvyv6")]
+
+[node name="PlayerContainer" type="Node3D" parent="." unique_id=1068310013]
+
+[node name="PlayerUI" parent="." unique_id=2081950460 node_paths=PackedStringArray("network_ui") instance=ExtResource("7_w2cw7")]
+unique_name_in_owner = true
+network_ui = NodePath("../NetworkUi")
+
+[node name="MeleeInteractable" parent="." unique_id=605355615 instance=ExtResource("7_5xqn0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.435925, 1.2744194, 5.074144)
+res_path = ""
+
+[node name="PistolInteractable" parent="." unique_id=356230117 instance=ExtResource("7_f5sk1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.435925, 1.2744194, 1.97212)
+res_path = ""
+
+[node name="FullAutoInteractable" parent="." unique_id=1007352318 instance=ExtResource("9_5xqn0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.435925, 1.2744194, -0.6288252)
+res_path = ""

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StreetRes" format=3 uid="uid://2xajllrvinru"]
+
+[ext_resource type="PackedScene" uid="uid://cnuejugwb67h0" path="res://Assets/Houses/Models/Roads/End.glb" id="1_vjgw5"]
+[ext_resource type="Script" uid="uid://d215oyl6ds3g4" path="res://Resources/Scripts/street_res.gd" id="2_qprbn"]
+
+[resource]
+script = ExtResource("2_qprbn")
+street_type = 2
+model = ExtResource("1_vjgw5")
+openings = Array[int]([1])
+main_opening = 1
+metadata/_custom_type_script = "uid://d215oyl6ds3g4"

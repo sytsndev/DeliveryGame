@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StreetRes" format=3 uid="uid://bleo46tbp05fu"]
+
+[ext_resource type="PackedScene" uid="uid://lgo5mdr1guiy" path="res://Assets/Houses/Models/Roads/Corner.glb" id="1_cxhyk"]
+[ext_resource type="Script" uid="uid://d215oyl6ds3g4" path="res://Resources/Scripts/street_res.gd" id="1_pnvrx"]
+
+[resource]
+script = ExtResource("1_pnvrx")
+street_type = 1
+model = ExtResource("1_cxhyk")
+openings = Array[int]([1, 2])
+main_opening = 2

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://chno1aykx23bv"]
+
+[ext_resource type="PackedScene" uid="uid://b43tg2rvw0aip" path="res://Shaders/house.tscn" id="2_fj7yv"]
+[ext_resource type="Script" uid="uid://bs43p1bye1hml" path="res://character_body_3d.gd" id="2_tlwt5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f3sb7"]
+sky_material = SubResource("ProceduralSkyMaterial_gv5m4")
+
+[sub_resource type="Environment" id="Environment_fj7yv"]
+background_mode = 2
+sky = SubResource("Sky_f3sb7")
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s1fef"]
+
+[node name="World" type="Node3D" unique_id=913745138]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=75975849]
+environment = SubResource("Environment_fj7yv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2023251199]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="House" parent="." unique_id=81558773 instance=ExtResource("2_fj7yv")]
+house_seed = null
+generate_on_ready = null
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=757606122 node_paths=PackedStringArray("neck", "camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.211885)
+script = ExtResource("2_tlwt5")
+neck = NodePath("Neck")
+camera = NodePath("Neck/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=638529711]
+shape = SubResource("CapsuleShape3D_s1fef")
+
+[node name="Neck" type="Node3D" parent="CharacterBody3D" unique_id=1451573362]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck" unique_id=116323893]
+transform = Transform3D(1, 0, 0, 0, 0.9682899, 0.24982925, 0, -0.24982925, 0.9682899, 0, 0, 0)
+fov = 90.0
