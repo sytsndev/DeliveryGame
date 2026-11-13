@@ -83,7 +83,7 @@ func generate_house(seed_override: int = -1) -> Node3D:
 		var wall_material := house_res.wall_material.duplicate() as ShaderMaterial
 
 		if house_res.wall_texture.size() > 0:
-			var index = rng.randi_range(0, house_res.wall_texture.size())
+			var index = rng.randi_range(0, house_res.wall_texture.size() - 1)
 			wall_material.set_shader_parameter("diffuse_texture", house_res.wall_texture[index].diffuse)
 			wall_material.set_shader_parameter("normal_texture", house_res.wall_texture[index].normal)
 			wall_material.set_shader_parameter("roughness_texture", house_res.wall_texture[index].roughness)
@@ -113,7 +113,7 @@ func generate_house(seed_override: int = -1) -> Node3D:
 			var roof_material := house_res.roof_material.duplicate() as ShaderMaterial
 
 			if house_res.roof_texture.size() > 0:
-				var index = rng.randi_range(0, house_res.roof_texture.size())
+				var index = rng.randi_range(0, house_res.roof_texture.size() - 1)
 				roof_material.set_shader_parameter("diffuse_texture", house_res.roof_texture[index].diffuse)
 				roof_material.set_shader_parameter("normal_texture", house_res.roof_texture[index].normal)
 				roof_material.set_shader_parameter("roughness_texture", house_res.roof_texture[index].roughness)
@@ -158,7 +158,7 @@ func generate_house(seed_override: int = -1) -> Node3D:
 			var door_material := house_res.door_material.duplicate() as ShaderMaterial
 
 			if house_res.door_texture.size() > 0:
-				var index = rng.randi_range(0, house_res.door_texture.size())
+				var index = rng.randi_range(0, house_res.door_texture.size() - 1)
 				door_material.set_shader_parameter("diffuse_texture", house_res.door_texture[index].diffuse)
 				door_material.set_shader_parameter("normal_texture", house_res.door_texture[index].normal)
 				door_material.set_shader_parameter("roughness_texture", house_res.door_texture[index].roughness)

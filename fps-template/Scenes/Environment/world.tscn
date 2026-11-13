@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bb762xwdu003v"]
 
 [ext_resource type="Script" uid="uid://du14w7h2ekdc3" path="res://Scripts/Environment/world.gd" id="1_5iqf7"]
-[ext_resource type="PackedScene" uid="uid://b43tg2rvw0aip" path="res://Scenes/House/house.tscn" id="2_e35u1"]
+[ext_resource type="PackedScene" uid="uid://blvjqrva508t" path="res://Scenes/Environment/generator.tscn" id="2_e35u1"]
 [ext_resource type="PackedScene" uid="uid://n1bmpmajeq05" path="res://Scenes/Player/player.tscn" id="2_mh7mo"]
 [ext_resource type="Script" uid="uid://b6lhrlb5r0xck" path="res://Scripts/Network/Spawners/high_level_player_spawner.gd" id="3_mh7mo"]
 [ext_resource type="PackedScene" uid="uid://cx743a7r2n71x" path="res://Scenes/UI/player_ui.tscn" id="7_w2cw7"]

@@ -33,105 +33,135 @@ var start_cell: Vector2
 var rng := RandomNumberGenerator.new()
 
 
+#func _ready() -> void:
+	#setup_grid()
+	#
+	#set_cell(18, 1, 1)
+	#set_cell(18, 2, 1)
+	#set_cell(18, 3, 1)
+	#set_cell(18, 4, 1)
+	#set_cell(17, 4, 1)
+	#set_cell(16, 4, 1)
+	#set_cell(15, 4, 1)
+	#set_cell(14, 4, 1)
+	#set_cell(13, 4, 1)
+	#set_cell(13, 5, 1)
+	#set_cell(13, 6, 1)
+	#set_cell(13, 7, 1)
+	#set_cell(13, 8, 1)
+	#set_cell(13, 9, 1)
+	#set_cell(13, 10, 1)
+	#set_cell(17, 10, 1)
+	#set_cell(16, 10, 1)
+	#set_cell(15, 10, 1)
+	#set_cell(14, 10, 1)
+	#
+	#set_cell(12, 6, 1)
+	#set_cell(11, 6, 1)
+	#set_cell(10, 6, 1)
+	#set_cell(9, 6, 1)
+	#set_cell(9, 7, 1)
+	#set_cell(9, 8, 1)
+	#set_cell(9, 9, 1)
+	#set_cell(9, 10, 1)
+	#set_cell(9, 11, 1)
+	#set_cell(9, 12, 1)
+	#set_cell(9, 13, 1)
+	#set_cell(9, 14, 1)
+	#set_cell(9, 15, 1)
+	#set_cell(9, 16, 1)
+	#set_cell(9, 17, 1)
+	#set_cell(9, 18, 1)
+	#set_cell(9, 19, 1)
+	#set_cell(10, 19, 1)
+	#set_cell(11, 19, 1)
+	#set_cell(12, 19, 1)
+	#set_cell(13, 19, 1)
+	#set_cell(14, 19, 1)
+	#set_cell(15, 19, 1)
+	#set_cell(16, 19, 1)
+	#set_cell(17, 19, 1)
+	#
+	#
+	#
+	#
+	#set_cell(19, 4, 1)
+	#set_cell(20, 4, 1)
+	#set_cell(21, 4, 1)
+	#set_cell(22, 4, 1)
+	#set_cell(23, 4, 1)
+	#set_cell(23, 5, 1)
+	#set_cell(23, 6, 1)
+	#set_cell(23, 7, 1)
+	#set_cell(23, 8, 1)
+	#set_cell(23, 9, 1)
+	#set_cell(23, 10, 1)
+	#set_cell(19, 10, 1)
+	#set_cell(20, 10, 1)
+	#set_cell(21, 10, 1)
+	#set_cell(22, 10, 1)
+	#set_cell(18, 5, 1)
+	#set_cell(18, 6, 1)
+	#set_cell(18, 7, 1)
+	#set_cell(18, 8, 1)
+	#set_cell(18, 9, 1)
+	#set_cell(18, 10, 1)
+	#set_cell(18, 11, 1)
+	#set_cell(18, 12, 1)
+	#set_cell(18, 13, 1)
+	#set_cell(18, 14, 1)
+	#set_cell(18, 15, 1)
+	#set_cell(18, 16, 1)
+	#set_cell(18, 17, 1)
+	#set_cell(18, 18, 1)
+	#set_cell(18, 19, 1)
+	#set_cell(18, 20, 1)
+	#set_cell(18, 21, 1)
+	#set_cell(18, 22, 1)
+	#set_cell(18, 23, 1)
+	#set_cell(18, 24, 1)
+	#set_cell(18, 25, 1)
+#
+	##rand_gen()
+	##set_cell(9, 7, 1)
+	##set_cell(10, 7, 1)
+	#generate()
+	#var i = 0
+	#while i < grid_size:
+		#print(grid.slice(i, i + grid_width))
+		#i += grid_width
+
 func _ready() -> void:
 	setup_grid()
-	
-	set_cell(18, 1, 1)
-	set_cell(18, 2, 1)
-	set_cell(18, 3, 1)
-	set_cell(18, 4, 1)
-	set_cell(17, 4, 1)
-	set_cell(16, 4, 1)
-	set_cell(15, 4, 1)
-	set_cell(14, 4, 1)
-	set_cell(13, 4, 1)
-	set_cell(13, 5, 1)
-	set_cell(13, 6, 1)
-	set_cell(13, 7, 1)
-	set_cell(13, 8, 1)
-	set_cell(13, 9, 1)
-	set_cell(13, 10, 1)
-	set_cell(17, 10, 1)
-	set_cell(16, 10, 1)
-	set_cell(15, 10, 1)
-	set_cell(14, 10, 1)
-	
-	set_cell(12, 6, 1)
-	set_cell(11, 6, 1)
-	set_cell(10, 6, 1)
-	set_cell(9, 6, 1)
-	set_cell(9, 7, 1)
-	set_cell(9, 8, 1)
-	set_cell(9, 9, 1)
-	set_cell(9, 10, 1)
-	set_cell(9, 11, 1)
-	set_cell(9, 12, 1)
-	set_cell(9, 13, 1)
-	set_cell(9, 14, 1)
-	set_cell(9, 15, 1)
-	set_cell(9, 16, 1)
-	set_cell(9, 17, 1)
-	set_cell(9, 18, 1)
-	set_cell(9, 19, 1)
-	set_cell(10, 19, 1)
-	set_cell(11, 19, 1)
-	set_cell(12, 19, 1)
-	set_cell(13, 19, 1)
-	set_cell(14, 19, 1)
-	set_cell(15, 19, 1)
-	set_cell(16, 19, 1)
-	set_cell(17, 19, 1)
-	
-	
-	
-	
-	set_cell(19, 4, 1)
-	set_cell(20, 4, 1)
-	set_cell(21, 4, 1)
-	set_cell(22, 4, 1)
-	set_cell(23, 4, 1)
-	set_cell(23, 5, 1)
-	set_cell(23, 6, 1)
-	set_cell(23, 7, 1)
-	set_cell(23, 8, 1)
-	set_cell(23, 9, 1)
-	set_cell(23, 10, 1)
-	set_cell(19, 10, 1)
-	set_cell(20, 10, 1)
-	set_cell(21, 10, 1)
-	set_cell(22, 10, 1)
-	set_cell(18, 5, 1)
-	set_cell(18, 6, 1)
-	set_cell(18, 7, 1)
-	set_cell(18, 8, 1)
-	set_cell(18, 9, 1)
-	set_cell(18, 10, 1)
-	set_cell(18, 11, 1)
-	set_cell(18, 12, 1)
-	set_cell(18, 13, 1)
-	set_cell(18, 14, 1)
-	set_cell(18, 15, 1)
-	set_cell(18, 16, 1)
-	set_cell(18, 17, 1)
-	set_cell(18, 18, 1)
-	set_cell(18, 19, 1)
-	set_cell(18, 20, 1)
-	set_cell(18, 21, 1)
-	set_cell(18, 22, 1)
-	set_cell(18, 23, 1)
-	set_cell(18, 24, 1)
-	set_cell(18, 25, 1)
+	generate_road_layout()
+	generate() # Your existing function that spawns models
 
-	#rand_gen()
-	#set_cell(9, 7, 1)
-	#set_cell(10, 7, 1)
-	generate()
-	var i = 0
-	while i < grid_size:
-		print(grid.slice(i, i + grid_width))
-		i += grid_width
+func generate_road_layout() -> void:
+	# Main road runs horizontally across the middle.
+	var main_y := int(grid_height / 2)
+	draw_horizontal_road(2, grid_width - 1, main_y)
+
+	# Try possible branch points along the main road.
+	for x in range(4, grid_width - 2, 4):
+		if rng.randf() > 0.7:
+			continue
+
+		# Each branch grows either north or south.
+		var direction := -1 if rng.randf() < 0.5 else 1
+		var max_length := main_y - 1 if direction == -1 else grid_height - main_y
+		var length := rng.randi_range(3, min(6, max_length))
+
+		draw_vertical_road(x, main_y, direction, length)
+
+func draw_horizontal_road(start_x: int, end_x: int, y: int) -> void:
+	for x in range(start_x, end_x + 1):
+		set_cell(x, y, 1)
 
 
+func draw_vertical_road(x: int, start_y: int, direction: int, length: int) -> void:
+	for step in range(1, length + 1):
+		var y := start_y + direction * step
+		set_cell(x, y, 1)
 
 func setup_grid():
 	rng.seed = Global.seed
@@ -256,26 +286,20 @@ func instance_street(street: StreetRes, index: int):
 	add_child(instance)
 	return instance
 
-func get_cell_offset(index: int):
+func get_cell_offset(index: int) -> Vector2:
 	var x: int = index / grid_width
 	var y: int = index % grid_width
-	return {
-		"x": x,
-		"y": y
-	}
+	return Vector2(x, y)
 
 
-func get_cell_x_y(index: int) -> Dictionary:
+func get_cell_x_y(index: int) -> Vector2:
 	if index < 0 or index >= grid.size():
-		return {"x": -1, "y": -1}
+		return  Vector2(-1, -1)
 
 	var x: int = index % grid_width + 1
 	var y: int = index / grid_width + 1
 
-	return {
-		"x": x,
-		"y": y
-	}
+	return Vector2(x, y)
 
 
 func get_turn_count(ending_dir: String, connection_dir: String):
